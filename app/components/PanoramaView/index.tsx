@@ -3,24 +3,27 @@
 import React from 'react';
 import ReactPannellum, { addScene } from "react-pannellum";
 
-export default function PanoramaView() {  
+export default function PanoramaView() {
   const style = {
     width: "100%",
-    height: "600px",
+    height: "100%",
     background: "#000000",
     borderRadius: "10px",
-    border: "2px solid white"
+    border: "2px solid white",
+    "@media (min-width: 768px)": {
+      height: "20vh"
+    }
   }
 
   return (
-    <section id='panorama-view' className='bg-[#1E1E1E] px-12 py-10'>
+    <section id='panorama-view' className='bg-[#1E1E1E] py-10 md:py-12 px-6 md:px-12'>
       <div className='flex items-center justify-between text-white py-4'>
-        <h2 className='px-4 text-3xl'>360 View</h2>
+        <h2 className='px-4 text-2xl md:text-3xl'>360 View</h2>
 
-        <p className='px-4'>Type of House</p>
+        <p className='px-4 text-sm md:text-base'>Type of House</p>
       </div>
 
-      <div className='w-full'> 
+      <div className='w-full h-52 md:h-96 lg:h-screen'> 
         <ReactPannellum
           id="pannellum"
           sceneId="circle"
@@ -43,7 +46,6 @@ export default function PanoramaView() {
             ],
           }}
           style={style}
-        
           onPanoramaLoaded={() => {
             addScene(
               'house',

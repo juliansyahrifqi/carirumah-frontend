@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ButtonSidebar from "../Button/ButtonNavbar";
+import ButtonSidebar from "../Button/ButtonSidebar";
 import Image from "next/image";
 import Logo from "/public/logo.svg";
 import { BsBookmark, BsCart2 } from "react-icons/bs";
@@ -24,17 +24,20 @@ export default function Navbar() {
   const handleSidebarOpen = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
   const pathname = usePathname();
 
   return (
     <>
-      <nav className="flex justify-between items-center pt-10 px-12">
+      <nav className="flex justify-between items-center pt-10 px-6 md:px-12">
         <div className="flex gap-20 items-center">
-          <Link href="/">
+          <Link href="/" className="hidden md:block">
             <Image src={Logo} alt="Botaniture Logo" width={45} height={45} />
           </Link>
+
+          <ButtonSidebar handleSidebarOpen={handleSidebarOpen}/>
           
-          <div className="flex gap-10">
+          <div className="hidden md:flex md:gap-10">
             {menus.map((menu, i) => {
               return (
                 <Link href={menu.href} key={i}>
@@ -60,10 +63,10 @@ export default function Navbar() {
       </nav>
 
       
-      <nav className={`z-50 fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm pt-12 pb-4 px-10 bg-sidebar border-r overflow-y-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-all ease-in-out duration-500`}>
+      <nav className={`z-50 fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm pt-12 pb-4 px-10 bg-gray-50 border-r overflow-y-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-all ease-in-out duration-500`}>
         <div className="flex items-center mb-8">
           <a className="mr-auto text-3xl font-bold leading-none" href="/">
-            <Image src={Logo} width={200} alt="Botaniture Logo" />
+            <Image src={Logo} width={200} alt="Botaniture Logo" className="w-16"/>
           </a>
           <button className="navbar-close" onClick={handleSidebarOpen}>
             <svg
@@ -89,36 +92,36 @@ export default function Navbar() {
               <Link
                 className={`${
                   pathname === "/"
-                    ? "bg-primary-20 text-primary rounded-lg"
+                    ? "bg-primary bg-opacity-20 text-primary rounded-lg"
                     : " transition-colors duration-500 cursor-pointer"
-                } block p-4 text-lg font-medium text-primary hover:bg-primary-20 hover:text-primary hover:rounded-lg font-roboto`}
+                } block p-4 text-lg font-medium text-primary hover:bg-primary hover:bg-opacity-20 hover:text-primary hover:rounded-lg font-roboto`}
                 href="/"
               >
-                Beranda
+                Home
               </Link>
             </li>
             <li className="mb-2">
               <Link
                 className={`${
                   pathname === "/belanja"
-                    ? "bg-primary-20 text-blue-600 rounded-lg"
+                    ? "bg-primary bg-opacity-20 text-blue-600 rounded-lg"
                     : " transition-colors duration-500 cursor-pointer"
-                } block p-4 text-lg font-medium text-primary hover:bg-primary-20 hover:text-primary hover:rounded-lg font-roboto`}
+                } block p-4 text-lg font-medium text-primary hover:bg-primary hover:bg-opacity-20 hover:text-primary hover:rounded-lg font-roboto`}
                 href="/belanja"
               >
-                Belanja
+                Type
               </Link>
             </li>
             <li className="mb-2">
               <Link
                 className={`${
                   pathname === "/blog"
-                    ? "bg-primary-20 text-blue-600 rounded-lg"
+                    ? "bg-primary bg-opacity-20 text-blue-600 rounded-lg"
                     : " transition-colors duration-500 cursor-pointer"
-                } block p-4 text-lg font-medium text-primary hover:bg-primary-20 hover:text-primary hover:rounded-lg font-roboto`}
+                } block p-4 text-lg font-medium text-primary hover:bg-primary hover:bg-opacity-20 hover:text-primary hover:rounded-lg font-roboto`}
                 href="/blog"
               >
-                Blog
+                Best Sales
               </Link>
             </li>
           </ul>
@@ -126,7 +129,7 @@ export default function Navbar() {
         <div className="mt-auto">
           <div className="pt-6 flex justify-center align-center"></div>
           <p className="my-4 text-sm text-center text-gray-400 font-normal font-roboto">
-            <span>Copyright © Botaniture 2023</span>
+            <span>Copyright © Cari Rumah 2023</span>
           </p>
         </div>
       </nav>
