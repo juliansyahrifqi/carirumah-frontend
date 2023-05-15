@@ -7,7 +7,7 @@ export default function PanoramaView() {
   const style = {
     width: "100%",
     height: "100%",
-    background: "#000000",
+    background: "rgba(255, 255, 255, 0.15)",
     borderRadius: "10px",
     border: "2px solid white",
     "@media (min-width: 768px)": {
