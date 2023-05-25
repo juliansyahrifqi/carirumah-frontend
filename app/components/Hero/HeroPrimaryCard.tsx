@@ -15,14 +15,14 @@ export default function HeroPrimaryCard() {
           <p className='text-hero-primary font-medium'>Cari Rumah</p>
         </div>
 
-        <h2 className='text-2xl md:text-4xl text-hero-primary mt-4'>
+        <h2 className='text-2xl md:text-4xl text-hero-primary mt-4 font-sfpro'>
           Discover <br />
           your <span className='font-bold'>dream house</span>
         </h2>
       </div>
 
       <div className='mt-auto'>
-        <button className='px-5 py-4 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-xl bg-[#EFEFEFE0] w-full md:w-auto'>
+        <button className='px-5 py-4 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-xl bg-[#EFEFEFE0] w-full md:w-auto font-sfpro'>
           Check Product
         </button>
       </div>

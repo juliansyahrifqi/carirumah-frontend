@@ -1,7 +1,9 @@
 "use client"
 
+import Image from 'next/image';
 import React from 'react';
 import ReactPannellum, { addScene } from "react-pannellum";
+import Icon360 from "../../../public/icon/360-icon.png";
 
 export default function PanoramaView() {
   const style = {
@@ -23,7 +25,7 @@ export default function PanoramaView() {
         <p className='px-4 text-sm md:text-base'>Type of House</p>
       </div>
 
-      <div className='w-full h-52 md:h-96 lg:h-screen'> 
+      <div className='relative w-full h-52 md:h-96 lg:h-screen'> 
         <ReactPannellum
           id="pannellum"
           sceneId="circle"
@@ -71,6 +73,8 @@ export default function PanoramaView() {
             )
           }}
         />
+
+        <Image src={Icon360} alt="360 Icon" className='absolute bottom-5 right-5 md:bottom-10 md:right-16 w-6 md:w-14'/>
       </div>
     </section>
   )

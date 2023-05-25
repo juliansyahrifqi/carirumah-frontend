@@ -5,7 +5,7 @@ import HeroCardItem from './HeroCardItem'
 
 export default function Hero() {
   return (
-    <section id="#hero" className='grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4 py-10 md:py-12 px-6 md:px-12'>
+    <section id="#hero" className='grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4 pb-12 px-6 md:px-12'>
       <div className='row-span-2'>
         <HeroPrimaryCard />
       </div>

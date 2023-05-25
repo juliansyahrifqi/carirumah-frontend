@@ -16,6 +16,9 @@ module.exports = {
         'primary': "#2E61E5",
         'black-secondary': "#343434",
         'hero-primary': "#424242",
+      },
+      fontFamily: {
+        sfpro: ['var(--font-sfpro)'],
       }
     },
   },

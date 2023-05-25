@@ -13,7 +13,7 @@ import Button from "../Button";
 const menus = [
   { name: "Home", href: "/" },
   { name: "Type",  href: "/type" },
-  { name: "Best Sales", href: "/best-sales" },
+  { name: "Explore", href: "/explore" },
   { name: "Best Sales", href: "/best-sales" },
 ];
 
@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="flex justify-between items-center pt-10 px-6 md:px-12">
-        <div className="flex gap-20 items-center">
+        <div className="flex gap-20 items-center font-sfpro">
           <Link href="/" className="hidden md:block">
             <Image src={Logo} alt="Botaniture Logo" width={45} height={45} />
           </Link>
@@ -41,9 +41,12 @@ export default function Navbar() {
             {menus.map((menu, i) => {
               return (
                 <Link href={menu.href} key={i}>
-                  <span className="text-sm font-medium text-primary">
+                  <span className={`text-sm text-primary ${pathname === menu.href ? 'font-bold' : 'font-medium'}`}>
                     {menu.name}
                   </span>
+                  {pathname === menu.href && (
+                    <hr className="w-5 border border-primary mx-auto"/>
+                  )} 
                 </Link>
               );
             })}

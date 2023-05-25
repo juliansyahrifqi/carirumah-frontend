@@ -5,10 +5,10 @@ import Button from '../Button';
 
 export default function HeroSecondaryCard() {
   return (
-    <div className="relative max-h-52 md:max-h-64 rounded-xl transition ease-out duration-300 hover:scale-105">
+    <div className="relative max-h-52 md:max-h-64 rounded-xl transition ease-out duration-300 hover:scale-[103%]">
         <Image src={image} alt="Bg Hero" className='h-full object-cover rounded-xl'/>
 
-        <p className='absolute font-medium text-xl md:text-2xl text-white top-0 px-4 md:px-10 py-4 md:py-6'>Best Sales</p>
+        <p className='absolute font-medium text-xl md:text-2xl text-white top-0 px-4 md:px-10 py-4 md:py-6 font-sfpro'>Best Sales</p>
     </div>
   )
 }
